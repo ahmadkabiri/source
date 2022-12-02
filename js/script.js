@@ -51,4 +51,5 @@ function passwordValidation () {
         passwordMessage.innerHTML = "حالا اوکی شد"
     }
 }
+;
 
