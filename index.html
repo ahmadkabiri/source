@@ -14,10 +14,10 @@
     <div class="login-page">
         <div class="form">
                 <!-- <input type="text" placeholder="username" class="username" onkeypress = "keyLog()" /> -->
-                <input type="text" placeholder="username" class="username" onfocus = "usernameValidation ()" />
+                <input type="text" placeholder="username" class="username"  onblur="usernameValidation()" />
                 <span class="username-validation">must contain 12 character (min)</span>
                 
-                <input type="password" placeholder="password" class="password" onkeydown = "passwordValidation ()" />
+                <input type="password" placeholder="password" class="password"  onblur="passwordValidation()" />
                 <span class="password-validation">must contain 8 character (min)</span>
 
                 <button onclick="dataValidation()">login</button>

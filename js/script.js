@@ -28,29 +28,27 @@ function dataValidation() {
 
 
 function usernameValidation () {
+    console.log(userNameInput.value.input)
     if(userNameInput.value.length < 12){
-        usernameMessage.innerHTML = "must contain 12 character (min)"
-        usernameMessage.style.color = "red"
         usernameMessage.style.display = "block"
+        usernameMessage.style.color = "red" ;
+        usernameMessage.innerHTML = "از 12 کاراکتر کمتر است"
     }else{
-        usernameMessage.innerHTML = "Correct username value"
-        usernameMessage.style.color = "green"
         usernameMessage.style.display = "block"
+        usernameMessage.style.color = "green" ;
+        usernameMessage.innerHTML = "حالا اوکی شد"
     }
 }
 
 function passwordValidation () {
     if(passwordInput.value.length < 8){
-        passwordMessage.innerHTML = "must contain 8 character (min)"
-        passwordMessage.style.color = "red"
         passwordMessage.style.display = "block"
+        passwordMessage.style.color = "red" ;
+        passwordMessage.innerHTML = "از 8 کاراکتر کمتر است"
     }else{
-        passwordMessage.innerHTML = "Correct password value"
-        passwordMessage.style.color = "green"
         passwordMessage.style.display = "block"
+        passwordMessage.style.color = "green" ;
+        passwordMessage.innerHTML = "حالا اوکی شد"
     }
-    
 }
-
-
 
