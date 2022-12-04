@@ -1,4 +1,4 @@
-/* 
+
 *{
   box-sizing: border-box;
   margin: 0;
@@ -9,7 +9,7 @@ body{
 }
 
 
-.image-container{
+/* .image-container{
   height: 100vh;
   background-image: url(/images/1.jpg);
   background-repeat: no-repeat;
@@ -18,91 +18,53 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.main-content{
-  width: 28rem;
-  height: auto ;
-  background-color: rgb(9, 9, 19);
-  border-radius: 1.5rem;
-  opacity: 0.75;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column ;
-  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-}
-
-.search-box input{
-  outline: none;
-  background-color: rgb(94, 94, 98);
-  opacity: 0.75 ;
-  color: #fff ;
-  width: 19rem;
-  height: 2.5rem;
-  border: none;
-  border-radius: 3rem;
-  font-weight: bold;
-  font-size: 1rem;
-  padding: 0 2rem ;
-}
-.search-box input:hover {
-  opacity: 0.8;
-}
-
-.fas{
-  outline: none;
-  background-color: rgb(94, 94, 98);
-  opacity: 0.75 ;
-  color: #fff ;
-  padding: 0.8rem;
-  border-radius: 100%;
-}
-.location{
-  color: #fff;
-  margin-top: 2rem;
-  font-weight: bold;
-  font-size: 1.6rem;
-}
-
-.degree{
-  color: #fff;
-  margin-top: 2rem;
-  font-weight: bold;
-  font-size: 3rem;
-}
-
-.weather{
-  color: #fff;
-  margin-top: 2rem;
-  font-weight: bold;
-  font-size: 1.5rem;
-}
-
-.details{
-  color: #fff;
-  margin-top: 2rem;
-  font-weight: bold;
-  font-size: 1.3rem;
-}
-.btn{
-  outline: none;
-  border-radius: 100%;
-  border: none;
-  cursor: pointer;
 } */
 
+.container{
+  background: linear-gradient(135deg,#90f5ee, #1f2fdf);
+  height: 100vh;
+  width:100vw ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.title{
+  color: #fff;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+}
 
+.input input{
+  width: 16rem;
+  height: 2.3rem;
+  outline: none;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-bottom: 0rem;
+}
 
+.btn{
+  margin: 0 1rem;
+  height: 3rem ;
+  width: 11rem;
+  color: rgb(113, 246, 243);
+  background: none;
+  border: solid 2px blue;
+  border-radius: 0.4rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  cursor: pointer;
+}
+.btn:hover{
+  color:blue;
+  box-shadow: rgba(238, 220, 220, 0.35) 0px 5px 15px;
+  transition: all 0.2s ease-in-out;
+}
+.alarm p{
+  color: rgb(169, 26, 26);
+  margin: 2rem;
+  font-size: 1.5rem;
 
-
-
-
-
-
-
-
-
-
-
-
-
+}
