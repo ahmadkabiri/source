@@ -1,47 +1,33 @@
 ﻿
-
-let inputElem = document.querySelector(".input");
-let alarmElem = document.querySelector(".alarm");
-let todosUl = document.querySelector(".list");
+let container = document.querySelector(".container")
 
 
-function addTodo (event) {
-    if(!inputElem.value){
-        alarmElem.style.opacity= "1"
-    }else{
-        alarmElem.style.opacity= "0"
-        // console.log(event)
-        if(event.key==="Enter"){
-            // console.log("ok")
-            
-            let newTodo = inputElem.value ;
-            let newLiTag = document.createElement('li') ;
-            // console.log(newLiTag);
-            newLiTag.className = "list-item";
-            let newSpanTag = document.createElement("span") ;
-            newSpanTag.innerHTML =  newTodo.trim() ;
-            let newITag = document.createElement("i");
-            newITag.addEventListener("click",(event)=>{
-                event.target.parentElement.remove()
-            })
-            // یک نکته که شدیدا باید بهش توجه کنم این هست که وقتی یک آیتم جدید درست میشه و اگر میدونیم قراره یه ایونت بگیره بایستی بعد از ساخته شدنش در خط بعدی این ایونت رو بدیم بهش این مساله خیلی خیلی مهمه
-            newITag.className = 'fa fa-trash' ;
-            newLiTag.append(newSpanTag,newITag) ;
-            console.log(newLiTag) ;
-            todosUl.append(newLiTag)
-            
-            inputElem.value = "" ;
+function contextMenuHandler (event) {
+    event.preventDefault() 
+    
+    console.log(event)
+    
+    let pageX = event.pageX ;
+    let pageY = event.pageY ;
+    
+    container.style.display = 'block' ;
+    container.style.left = `${pageX}px` ;
+    container.style.top = `${pageY}px` ;
 
-
-
-
-        }
-    }
 }
 
 
-inputElem.addEventListener("keydown",addTodo)
+function clickHandler (event) {
+    container.style.display = 'none' ;
+    
+}
 
+function keydownHandler (event) {
+    console.log(event)
+     if(event.code==="Escape"){
+    container.style.display = 'none' ;
+     }
+}
 
 
 
