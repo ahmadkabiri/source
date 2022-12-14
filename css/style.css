@@ -48,7 +48,7 @@ section:nth-of-type(even) {
 }
 
 footer {
-	height: 70px;
+	height: 700px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -78,7 +78,16 @@ footer {
 }
 
 
+.btn{
+	position: fixed;
+	width: 30rem; 
+	border: 3px solid #73AD21;
+	border-radius: 0.5rem;
+	bottom: 2.5rem;
+	right: 2.5rem;
+}
 
-
-
-
+button{
+	width: 100%;
+	font-size: 1.2rem;
+}
