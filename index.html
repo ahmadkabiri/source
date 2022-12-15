@@ -1,37 +1,48 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" 
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" 
-    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" 
-    crossorigin="anonymous" 
-    referrerpolicy="no-referrer" />
-    <title>SabzLearn | Js | 110</title>
-</head>
+    <title>SabzLearn | Js | 179</title>
+  </head>
 
-<body>
-
-
-    <audio src="music/Sharare.mp3"></audio>
-
-    <button onclick="timeMinusMusicHandler()">-5 Music</button>
-    <button onclick="previousMusicHandler()">Previous Music</button>
-    <button onclick="playMusicHandler()">Play Music</button>
-    <button onclick="pauseMusicHandler()">Pause Music</button>
-    <button onclick="nextMusicHandler()">Next Music</button>
-    <button onclick="musicSpeedHandler()">2X</button>
-    <button onclick="timePlusMusicHandler()">+5 Music</button>
-
-
+  <body>
+    <div class="container">
+      <br />
+      <h1>لیست موزیک های جدید</h1>
+      <br />
+      <br />
+      <div class="main-music">
+        <img src="images/peakpx.jpg" alt="" />
+        <i class="fa fa-lg fa-play" data-name="html"></i>
+        <audio src="media/html.m4a" data-name="html"></audio>
+      </div>
+      <div class="main-music">
+        <img src="images/34.jpg" alt="" />
+        <i class="fa fa-lg fa-play" data-name="bazar"></i>
+        <audio src="media/bazar.m4a" data-name="bazar"></audio>
+      </div>
+      <div class="main-music">
+        <img src="images/35.jpg" alt="" />
+        <i class="fa fa-lg fa-play" data-name="kar"></i>
+        <audio src="media/kar.m4a" data-name="kar"></audio>
+      </div>
+      <div class="main-music">
+        <img src="images/js.png" alt="" />
+        <i class="fa fa-lg fa-play" data-name="karyabi"></i>
+        <audio src="media/karyabi.mp3" data-name="karyabi"></audio>
+      </div>
+      <br /><br />
+    </div>
 
     <script src="js/script.js"></script>
-</body>
-
+  </body>
 </html>
 
 
