@@ -1,34 +1,34 @@
-﻿const $ = document ;
+﻿
+const $ = document ;
 
-const players = [...$.querySelectorAll(".fa-play")] ;
-const audios = [...$.querySelectorAll("audio")] ;
+const imgElem = [...$.querySelectorAll("img")] ;
 
-let musicName ;
+const dropDiv = $.querySelector(".drop") ;
+console.log(dropDiv)
+// console.log(imgElem)
 
-players.forEach((player)=>{
-    console.log(player) ;
-    player.addEventListener("click",(event)=>{
-        musicName = event.target.dataset.name ;
-        audios.forEach((audio)=>{
-            if(audio.dataset.name===musicName){
-                audio.currentTime=0
-                audio.play()
-            }else{
-                audio.pause()
-            }
-        })
+
+imgElem.forEach(el=>{
+    el.addEventListener("dragstart",(event)=>{
+        event.dataTransfer.setData("elemId",event.target.id)
 
     })
+
 })
 
 
 
+dropDiv.addEventListener("drop",(event)=>{
+    // console.log("droped")
+    let tergetId = event.dataTransfer.getData('elemId') ;
+    let targetElem = document.getElementById(tergetId)
+    // console.log(targetElem)
+    event.target.append(targetElem)
+})
 
-
-
-
-
-
+dropDiv.addEventListener("dragover",(event)=>{
+    event.preventDefault()
+})
 
 
 
