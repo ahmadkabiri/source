@@ -1,19 +1,58 @@
-﻿let changeThemeBtns = [...document.querySelectorAll(".theme")]
+﻿
+const $ = document ;
 
-function changeThemeHandler (event) {
-    let themeColor = event.target.dataset.color ;
-    document.documentElement.style.setProperty("--test-color",themeColor)
-    localStorage.setItem("color",themeColor);
-}
+const titleElem = $.querySelector(".title")
 
-function setFirstColor () {
-    let firstTheme = localStorage.getItem("color")
-    document.documentElement.style.setProperty("--test-color",firstTheme)
+$.addEventListener("keyup",(event)=>{
+    // console.log(event.key) ;
 
-}
+    appendValueToDOM(event)
 
-changeThemeBtns.forEach(el=>{
-    el.addEventListener("click",changeThemeHandler)
+    let userEventKey = event.key.toUpperCase() ;
+
+    let mainKeyElem = document.getElementById(userEventKey)
+
+    mainKeyElem.classList.add("hit");
+
+    mainKeyElem.addEventListener("animationend",()=>{
+        mainKeyElem.classList.remove("hit") ;
+    })
+
+
+    console.log(mainKeyElem)
+
+
 })
 
-window.addEventListener("load",setFirstColor)
+
+
+function appendValueToDOM (event) {
+
+    
+    if(event.code === "Backspace"){
+        titleElem.innerHTML = titleElem.innerHTML.substring(0,titleElem.innerHTML.length - 1)
+        return
+    }
+    
+    titleElem.innerHTML += event.key
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
