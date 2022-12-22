@@ -1,58 +1,83 @@
 ﻿
+
+const bookList = [
+    {year : "2022" ,author:"Daniel Kaneman", title :"Think Again"},
+    {year : "2010" ,author:"Daren Hardy", title :"Asare Morakab"},
+    {year : "2011" ,author:"khokhof", title :"Bartari Khafif"},
+    {year : "2000" ,author:"Elvin Tafler", title :"Moj Chaharom"},
+]
+
+
+
 const $ = document ;
 
-const titleElem = $.querySelector(".title")
+let titleInputElem = $.getElementById("title") ;
 
-$.addEventListener("keyup",(event)=>{
-    // console.log(event.key) ;
+let authorInputElem = $.getElementById("author") ;
 
-    appendValueToDOM(event)
+let yearInputElem = $.getElementById("year") ;
 
-    let userEventKey = event.key.toUpperCase() ;
+let btnAddBookElem = $.querySelector(".btn-block") ;
 
-    let mainKeyElem = document.getElementById(userEventKey)
+let bookListId = $.getElementById("book-list")
 
-    mainKeyElem.classList.add("hit");
+console.log(bookListId)
 
-    mainKeyElem.addEventListener("animationend",()=>{
-        mainKeyElem.classList.remove("hit") ;
-    })
+let list = {} ; 
+console.log(titleInputElem.value)
 
+function checkInputs (event) {
+    event.preventDefault() ;
 
-    console.log(mainKeyElem)
+    if(yearInputElem.value && titleInputElem.value && authorInputElem ){
+        list.author = authorInputElem.value ;
+        list.year = yearInputElem.value ;
+        list.title =titleInputElem.value ;
 
+        authorInputElem.value='';
+        yearInputElem.value='';
+        titleInputElem.value='';
 
-})
+        bookList.push(list) ;
+        localStorage.setItem("booklist",JSON.stringify(bookList));
+        makeBookList(list);
 
-
-
-function appendValueToDOM (event) {
-
-    
-    if(event.code === "Backspace"){
-        titleElem.innerHTML = titleElem.innerHTML.substring(0,titleElem.innerHTML.length - 1)
-        return
     }
-    
-    titleElem.innerHTML += event.key
+
+}
+
+function makeBookList (list) {
+    console.log(list)
+    let newList =`<tr>
+    <th>${list.title}</th>
+    <th>${list.author}</th>
+    <th>${list.year}</th>
+  </tr>`
+
+  bookListId.innerHTML += newList;
+
+
 }
 
 
 
 
 
+btnAddBookElem.addEventListener("click",checkInputs)
 
 
 
+window.addEventListener("load",(event)=>{
+    
+    let localStorageBookList = JSON.parse(localStorage.getItem("booklist"))
+    
+    // console.log(event)
+    localStorageBookList.forEach(el=>{
+        makeBookList(el)
+    })
+})
 
 
 
-
-
-
-
-
-
-
-
+localStorage.setItem("booklist",JSON.stringify(bookList));
 
