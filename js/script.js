@@ -1,13 +1,7 @@
 ﻿
 
-const bookList = [
-    {year : "2022" ,author:"Daniel Kaneman", title :"Think Again"},
-    {year : "2010" ,author:"Daren Hardy", title :"Asare Morakab"},
-    {year : "2011" ,author:"khokhof", title :"Bartari Khafif"},
-    {year : "2000" ,author:"Elvin Tafler", title :"Moj Chaharom"},
-]
 
-
+// console.log(bookList) ;
 
 const $ = document ;
 
@@ -21,33 +15,39 @@ let btnAddBookElem = $.querySelector(".btn-block") ;
 
 let bookListId = $.getElementById("book-list")
 
-console.log(bookListId)
+let bookList = [
+    {author:"ali" , year:2012 , title:"donkey are flying"}
+] ;
+
+
 
 let list = {} ; 
-console.log(titleInputElem.value)
 
 function checkInputs (event) {
     event.preventDefault() ;
-
+    
     if(yearInputElem.value && titleInputElem.value && authorInputElem ){
         list.author = authorInputElem.value ;
         list.year = yearInputElem.value ;
         list.title =titleInputElem.value ;
+        // list.id = bookList.length + 1
 
         authorInputElem.value='';
         yearInputElem.value='';
         titleInputElem.value='';
 
         bookList.push(list) ;
+        console.log(list)
+
         localStorage.setItem("booklist",JSON.stringify(bookList));
         makeBookList(list);
+        list = {}
 
     }
 
 }
 
 function makeBookList (list) {
-    console.log(list)
     let newList =`<tr>
     <th>${list.title}</th>
     <th>${list.author}</th>
@@ -69,15 +69,15 @@ btnAddBookElem.addEventListener("click",checkInputs)
 
 window.addEventListener("load",(event)=>{
     
-    let localStorageBookList = JSON.parse(localStorage.getItem("booklist"))
+    bookList = JSON.parse(localStorage.getItem("booklist"))
     
     // console.log(event)
-    localStorageBookList.forEach(el=>{
+    bookList.forEach(el=>{
         makeBookList(el)
     })
 })
 
 
 
-localStorage.setItem("booklist",JSON.stringify(bookList));
+// localStorage.setItem("booklist",JSON.stringify(bookList));
 
