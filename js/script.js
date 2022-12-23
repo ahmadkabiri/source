@@ -1,83 +1,50 @@
 ﻿
 
 
-// console.log(bookList) ;
+let hourBox = document.querySelector(".hour") ; 
 
-const $ = document ;
+let minuteBox = document.querySelector(".minute") ; 
 
-let titleInputElem = $.getElementById("title") ;
-
-let authorInputElem = $.getElementById("author") ;
-
-let yearInputElem = $.getElementById("year") ;
-
-let btnAddBookElem = $.querySelector(".btn-block") ;
-
-let bookListId = $.getElementById("book-list")
-
-let bookList = [
-    {author:"ali" , year:2012 , title:"donkey are flying"}
-] ;
+let secondBox = document.querySelector(".second") ; 
 
 
 
-let list = {} ; 
 
-function checkInputs (event) {
-    event.preventDefault() ;
-    
-    if(yearInputElem.value && titleInputElem.value && authorInputElem ){
-        list.author = authorInputElem.value ;
-        list.year = yearInputElem.value ;
-        list.title =titleInputElem.value ;
-        // list.id = bookList.length + 1
+function setTime () {
+    let myTime = new Date()
 
-        authorInputElem.value='';
-        yearInputElem.value='';
-        titleInputElem.value='';
+    let hour = myTime.getHours() ;
+    let minutes = myTime.getMinutes() ;
+    let seconds = myTime.getSeconds() ;
 
-        bookList.push(list) ;
-        console.log(list)
-
-        localStorage.setItem("booklist",JSON.stringify(bookList));
-        makeBookList(list);
-        list = {}
-
+    if(hour<10){
+        hour = "0" + hour
+    }
+    if(minutes<10){
+        minutes = "0" + minutes
+    }
+    if(seconds<10){
+        seconds = "0" + seconds
     }
 
-}
-
-function makeBookList (list) {
-    let newList =`<tr>
-    <th>${list.title}</th>
-    <th>${list.author}</th>
-    <th>${list.year}</th>
-  </tr>`
-
-  bookListId.innerHTML += newList;
 
 
+    hourBox.innerHTML= hour ;
+
+    minuteBox.innerHTML = minutes ; 
+
+    secondBox.innerText = seconds ;
 }
 
 
 
 
-
-btnAddBookElem.addEventListener("click",checkInputs)
-
-
-
-window.addEventListener("load",(event)=>{
-    
-    bookList = JSON.parse(localStorage.getItem("booklist"))
-    
-    // console.log(event)
-    bookList.forEach(el=>{
-        makeBookList(el)
-    })
-})
+setInterval(setTime,1000)
 
 
 
-// localStorage.setItem("booklist",JSON.stringify(bookList));
+
+
+
+
 

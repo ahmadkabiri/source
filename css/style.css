@@ -15,12 +15,32 @@
   width: 100vw;
   height: 100vh;
   display: flex;
+  /* flex-direction: row; */
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  background-color: #fff;
+  /* flex-direction: column; */
+  background-image: linear-gradient(to right,#8d59e9 , #c65ff9);;
 }
 
+.hour,
+.minute,
+.second{
+  width: 10rem;
+  height: 10rem;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3.5rem;
+  border-radius: 0.3rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin: 0 1.7rem;
+}
+p{
+  color: #fff;
+  font-size: 5rem;
+
+}
 
 
 :root{
