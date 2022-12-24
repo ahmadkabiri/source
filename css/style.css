@@ -13,35 +13,36 @@
   
 .container{
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
-  /* flex-direction: row; */
   justify-content: center;
   align-items: center;
-  /* flex-direction: column; */
   background-image: linear-gradient(to right,#8d59e9 , #c65ff9);;
 }
 
-.hour,
-.minute,
-.second{
-  width: 10rem;
-  height: 10rem;
-  background-color: #fff;
+.input-container{
   display: flex;
+  color: #fff;
   justify-content: center;
   align-items: center;
-  font-size: 3.5rem;
-  border-radius: 0.3rem;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  margin: 0 1.7rem;
-}
-p{
-  color: #fff;
-  font-size: 5rem;
-
+  height: 2rem; 
+  /* background-color: red;/ */
 }
 
+/* .container p{
+  margin-right: 0.5rem;
+} */
+
+
+.paragraph{
+border-radius: 0.5rem;
+border: 2px solid #fefefe;
+width: 30rem; 
+min-height: 30rem;
+margin-left: 1rem ;
+padding: 1rem ;
+color: #fefefe;
+}
 
 :root{
   --test-color: rgb(40, 187, 126) ;
