@@ -1,45 +1,94 @@
-﻿const dummyText = [
-    'Sweet roll tiramisu sugar plum halvah cupcake topping wafer tootsie roll. Caramels croissant chocolate cake cotton candy. Jelly chocolate cake macaroon brownie pastry gummies cheesecake. Gingerbread pie croissant sugar plum oat cake tart tootsie roll. Chupa chups cake wafer danish. Biscuit donut candy canes gummies candy topping marshmallow jujubes. Chocolate cake cupcake topping. Chupa chups soufflé candy canes pudding brownie gummi bears. Dessert cotton candy jelly oat cake sweet roll cookie macaroon sweet roll. Jelly-o icing halvah.',
-    'Sugar plum gummies cupcake gingerbread sweet. Pastry topping cake candy canes marshmallow caramels chupa chups. Halvah dessert tiramisu brownie lemon drops tootsie roll carrot cake. Cake soufflé oat cake cotton candy. Lollipop cake sweet roll croissant danish. Cake dessert tootsie roll cake liquorice sugar plum biscuit macaroon pie. Bonbon cookie cotton candy bear claw wafer.',
-    'Marshmallow candy canes marshmallow caramels chocolate cake liquorice jelly. Gummies caramels jelly beans chupa chups brownie bonbon. Jujubes jujubes sesame snaps powder. Macaroon sesame snaps muffin cake marzipan topping muffin powder pastry. Macaroon sesame snaps topping. Sweet apple pie jelly tart. Cookie apple pie sweet roll pastry. Cookie chocolate chocolate bar sweet gummies.',
-    'Chocolate sugar plum jelly-o sweet roll gummi bears oat cake powder pastry macaroon. Soufflé cheesecake apple pie jelly beans donut candy canes sweet macaroon. Gingerbread topping dessert bonbon sweet roll oat cake oat cake halvah. Cake chocolate cake chocolate sugar plum candy. Marshmallow brownie sweet dessert croissant chocolate fruitcake sweet donut. Cupcake muffin halvah.',
-    'Cupcake ice cream gummies dessert tiramisu. Cupcake pie cake apple pie jelly-o brownie oat cake soufflé. Candy canes chocolate cake candy canes jelly beans lollipop. Dragée candy canes jujubes pastry cheesecake. Candy canes apple pie powder. Caramels dessert caramels sweet roll danish jelly-o jelly-o powder liquorice. Biscuit pie sugar plum. Oat cake jelly-o marshmallow pastry dragée gummi bears topping. Bear claw ice cream lollipop danish candy jelly-o jelly-o.',
-    'Powder candy fruitcake. Bear claw sweet roll cake lollipop. Apple pie chupa chups cookie soufflé dessert topping gummi bears. Dragée gummi bears candy canes powder chupa chups. Cotton candy dragée lollipop. Sweet roll muffin oat cake marshmallow macaroon sugar plum muffin. Tart chupa chups candy. Fruitcake jujubes halvah marshmallow bonbon marshmallow. Croissant powder cheesecake donut bonbon. Caramels macaroon donut.',
-    'Tiramisu halvah pastry jujubes chocolate bar sugar plum gummies candy. Chocolate chupa chups icing dessert muffin jelly-o oat cake. Powder dessert powder tart tart. Pie powder lemon drops sweet tart icing cake tootsie roll biscuit. Jelly jelly-o sweet roll. Biscuit jelly beans chocolate cake pudding. Sesame snaps wafer apple pie lemon drops cupcake oat cake pie.',
-    'Gingerbread bonbon pudding biscuit sugar plum. Donut caramels cake danish lollipop. Chocolate bar jelly dessert candy canes. Sweet sesame snaps cookie. Croissant bear claw chocolate powder jelly beans ice cream. Bear claw brownie icing apple pie. Ice cream marshmallow tiramisu cotton candy brownie tiramisu jujubes. Croissant cheesecake tiramisu wafer powder pie macaroon.',
-    'Powder cake croissant tootsie roll tart lollipop jelly beans. Cake lemon drops wafer muffin biscuit marshmallow brownie. Cotton candy jelly-o cotton candy gummies. Cake sesame snaps macaroon tootsie roll. Pie wafer topping tootsie roll apple pie marzipan sweet. Bonbon tootsie roll candy canes pastry brownie bear claw.',
-  ];
+﻿
+const list_items = [
+  { id:1 , name: "Amin" , family:"Saeedi Rad"},
+  { id:2 , name: "Amin" , family:"Darabi"},
+  { id:3 , name: "Ali" , family:"Sangi"},
+  { id:4 , name: "Hossain" , family:"Fallah"},
+  { id:5 , name: "Abbas" , family:"Mohammadi"},
+
+  { id:6 , name: "Saheb" , family:"Mohammadi"},
+  { id:7 , name: "Ziba" , family:"Mahmoodi"},
+  { id:8 , name: "Mohammad" , family:"Rajabi"},
+  { id:9 , name: "Fateme" , family:"Rastan"},
+  { id:10 , name: "Sohrab" , family:"Rostami"},
+
+  { id:11 , name: "Ali" , family:"Nazari"},
+  { id:12 , name: "Ramin" , family:"Mohammadian"},
+  { id:13 , name: "Sara" , family:"Zahraie"},
+  { id:14 , name: "Sima" , family:"Araste"},
+  { id:15 , name: "Mahsa" , family:"Amini"},
+
+  { id:16 , name: "Sardar" , family:"Azmoon"},
+  { id:17 , name: "Ali" , family:"Zand Vakili"},
+  { id:18 , name: "Rahman" , family:"Ahmadi"},
+  { id:19 , name: "Mahdi" , family:"Mokhtari"},
+  { id:20 , name: "Hamed" , family:"Ghorbani"},
+
+  { id:21 , name: "Pouria" , family:"Gilani"},
+  { id:22 , name: "hossein" , family:"Bahrami"},
+]
 
 
+const list_element = document.getElementById("list") ;
 
+const pagination_element = document.getElementById("pagination") ;
 
-let inputElem = document.querySelector(".input") ;
+let current_page = 1 ;
+let rows = 3 ;
+let pages ;
 
+function displayPagination () {
 
-let paragraphDiv = document.querySelector(".paragraph") ;
+  pages = Math.ceil(list_items.length/rows)
+  makeButton(pages)
+} ;
 
+displayPagination()
 
-let btnElem = document.querySelector("button") ;
+function makeButton (pages) {
+console.log(pages)
 
+let btnElemArray = []
 
-function textGenerate () {
-  paragraphDiv.innerHTML = '';
-    let number = inputElem.value ;
-    inputElem.value = '' ;
-    for(i=0 ; i<=number ; i++) {
-      let randomIndex = Math.floor(Math.random()*10)
-      paragraphDiv.innerHTML += `
-      ${dummyText[randomIndex]}`
-    }
-    
+for(let i=1 ; i<=pages ;i++){
+  let buttonElem = document.createElement("button");
+  buttonElem.innerHTML = i ;
+  buttonElem.setAttribute("id",i)
+  btnElemArray.push(buttonElem)
+  sliceArray(1)
+  buttonElem.addEventListener("click",(event)=>{
+    event.target.classList.add("active") ;
+    let elemId = event.target.id
+    sliceArray(elemId)
+    btnElemArray.forEach(el=>{
+      if(elemId!==el.id){
+        el.classList.remove("active")
+      }
+    })
+  })
+  pagination_element.appendChild(buttonElem) ;
+}
+}
+
+function sliceArray (id) {
+  let idRow = id*rows ;
+  let current_row = list_items.slice(idRow-(rows),idRow)
+  makeRows(current_row) ;
+
+}
+
+function makeRows (row) {
+  list_element.innerHTML="";
+  row.forEach((el)=>{
+    let itemDiv = document.createElement("div") ;
+    itemDiv.classList.add("item") ;
+    itemDiv.innerHTML = `${el.name} ${el.family}`
+    list_element.append(itemDiv) ;
+  })
 }
 
 
 
-
-
-
-btnElem.addEventListener("click",textGenerate)
 
 
 
