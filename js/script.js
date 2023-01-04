@@ -16,7 +16,9 @@ window.addEventListener("scroll",()=>{
 
     let scrollRounded = Math.round(scrollPercent*100)
 
-    console.log(scrollRounded)
+console.log(`scrollY : ${scrollTop} 
+web page height : ${documentHeight}
+window height : ${windowHeight}`)
 
     customScroll.style.width = scrollRounded+"%" ;
 })
