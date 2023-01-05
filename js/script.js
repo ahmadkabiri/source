@@ -1,6 +1,4 @@
 ﻿
-let userInfo = document.querySelector("h1")
-
 let users = [
     { id : 1 , name : "amin" , age : 25 },
     { id : 2 , name : "ali" , age : 51 },
@@ -15,26 +13,17 @@ let users = [
 
 let locationSearch = location.search
 
-// Bad Way 
-// location.search.slice(1).split("=")[1]
-
-// Good Way 
 
 let locationSearchParams = new URLSearchParams(locationSearch)
 
-let userIDParam = locationSearchParams.get("id")
+let userIDParam = locationSearchParams.get("name")
 
+console.log(userIDParam)
 
 
 let mainUser = users.find(user=>{
-    return user.id === Number(userIDParam)
+    return user.name === userIDParam
 })
 
-if(mainUser){
-    userInfo.innerHTML = `Name : ${mainUser.name} | Age : ${mainUser.age}`
-}else{
-    userInfo.innerHTML = "User Is Not Defined :("
-}
 
-console.log(mainUser) ;
-
+console.log(mainUser)
