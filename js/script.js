@@ -1,44 +1,40 @@
-﻿let customScroll = document.querySelector("#scroll")
+﻿
+let userInfo = document.querySelector("h1")
+
+let users = [
+    { id : 1 , name : "amin" , age : 25 },
+    { id : 2 , name : "ali" , age : 51 },
+    { id : 3 , name : "amir" , age : 24 },
+    { id : 4 , name : "abbas" , age : 19 },
+    { id : 5 , name : "ahmad" , age : 32 },
+
+]
 
 
 
-window.addEventListener("scroll",()=>{
 
-    let scrollTop = window.scrollY
+let locationSearch = location.search
 
-    let documentHeight = document.body.clientHeight
+// Bad Way 
+// location.search.slice(1).split("=")[1]
 
-    let windowHeight = window.innerHeight
+// Good Way 
+
+let locationSearchParams = new URLSearchParams(locationSearch)
+
+let userIDParam = locationSearchParams.get("id")
 
 
-    let scrollPercent = scrollTop/(documentHeight-windowHeight)
 
-
-    let scrollRounded = Math.round(scrollPercent*100)
-
-console.log(`scrollY : ${scrollTop} 
-web page height : ${documentHeight}
-window height : ${windowHeight}`)
-
-    customScroll.style.width = scrollRounded+"%" ;
+let mainUser = users.find(user=>{
+    return user.id === Number(userIDParam)
 })
 
+if(mainUser){
+    userInfo.innerHTML = `Name : ${mainUser.name} | Age : ${mainUser.age}`
+}else{
+    userInfo.innerHTML = "User Is Not Defined :("
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.log(mainUser) ;
 
