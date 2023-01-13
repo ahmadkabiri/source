@@ -1,26 +1,21 @@
+"use strict"
 
-function addNewBook (callbackFunc) {
-    // Codes callbackFunc
-}
+ // num = 2
+ // numer = 12 
 
+ // console.log(number,num)
 
+ // function showValue(a,a) {
+    // Codes
+//  }
+// NaN = 12 
+// undefind = 120 
 
-// Higer Order Function توابع بالامرتبه
+// console.log(020+010) ; octal
 
-function hofExp () {
+// let eval = 12 
 
-    return function () {
-        console.log("I am an inner Function :)")
-    }
-}
+// let userName = "Amin" 
 
-
-// hofExp()()
-
-let hofInner = hofExp() ;
-
-hofInner()
-
-
-
+// delete username
 
