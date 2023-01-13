@@ -1,19 +1,31 @@
 
-let testNumber = 100 ;
-
-function pow (num1,num2) {
-    
-    testNumber = 1000  //shart 2
-
-    return num1**num2
+const todoInputElem = document.querySelector(".todo-input")
 
 
+const todoList = document.querySelector(".todolist")
 
-    // return Math.random()*num1*num2 shart1
+
+function trim (val) {
+    return val.trim()
 }
 
-console.log(pow(2,3))
+function toLowerCase (val) {
+    return val.toLowerCase()
+}
+
+function insertToLi (val) {
+    return `<li>${val}</li>`
+}
+
+function addTodo (event) {
+    if(event.charCode === 13){
+        todoList.insertAdjacentHTML("beforeend",insertToLi(toLowerCase(trim(todoInputElem.value))))
+
+        todoInputElem.value = '' ;
+
+    }
+}
 
 
 
-
+todoInputElem.addEventListener("keypress",addTodo)
