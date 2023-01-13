@@ -1,21 +1,34 @@
 "use strict"
 
- // num = 2
- // numer = 12 
-
- // console.log(number,num)
-
- // function showValue(a,a) {
-    // Codes
+//  function sum(num1,num2) {
+//     let addNumbers = num1 + num2 
+//     return addNumbers
 //  }
-// NaN = 12 
-// undefind = 120 
 
-// console.log(020+010) ; octal
 
-// let eval = 12 
+// const sum = (num1,num2)=>  {
+//     let addNumbers = num1 + num2 
+//     return addNumbers
+//  }
 
-// let userName = "Amin" 
+// const pow = (num1,num2)=>{
+//     return num1**num2
+// }
 
-// delete username
+// const pow = (num1,num2)=> num1**num2
+
+
+// const logger = val => console.log(val) ;
+
+// const generateUser = (id,name,age=12) => ({id,name,age}) 
+
+
+
+
+// let ali = generateUser(1,"ali")
+
+// console.log(ali)
+
+
+
 
