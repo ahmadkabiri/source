@@ -1,31 +1,26 @@
 
-const todoInputElem = document.querySelector(".todo-input")
-
-
-const todoList = document.querySelector(".todolist")
-
-
-function trim (val) {
-    return val.trim()
+function addNewBook (callbackFunc) {
+    // Codes callbackFunc
 }
 
-function toLowerCase (val) {
-    return val.toLowerCase()
-}
 
-function insertToLi (val) {
-    return `<li>${val}</li>`
-}
 
-function addTodo (event) {
-    if(event.charCode === 13){
-        todoList.insertAdjacentHTML("beforeend",insertToLi(toLowerCase(trim(todoInputElem.value))))
+// Higer Order Function توابع بالامرتبه
 
-        todoInputElem.value = '' ;
+function hofExp () {
 
+    return function () {
+        console.log("I am an inner Function :)")
     }
 }
 
 
+// hofExp()()
 
-todoInputElem.addEventListener("keypress",addTodo)
+let hofInner = hofExp() ;
+
+hofInner()
+
+
+
+
