@@ -1,31 +1,33 @@
 
-const btn = document.querySelector("button")
-
-
-// function clickHandler () {
-//     console.log("clicked")
-// }
-
-// btn.addEventListener("click",clickHandler)
-
-function logger (func) {
-    func()
+function firstLogs () {
+    console.log("1") ;
+    console.log("2") ;
 }
 
+function middleLog (callBack) {
 
-function logger2 () {
-    console.log("Logged 2")
+    setTimeout(()=>{
+        console.log("3");
+        callBack()
+    })
 }
 
+function lastLogs () {
+    console.log("4") ;
+    console.log("5") ;
+}
+
+firstLogs()
+middleLog(lastLogs)
 
 
-logger(logger2)
 
-let numbers = [1,2,3,4,5]
 
-numbers.map(item=>{
-    console.log(item)
-})
+
+
+
+
+
 
 
 
