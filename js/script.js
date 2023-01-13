@@ -1,27 +1,19 @@
 
-let books = [
-    {id:1 , name:"think again ", price:95000},
-    {id:2 , name:"shahname ", price:400000},
-    {id:3 , name:"ego ", price:78000},
-]
+let testNumber = 100 ;
 
-function addBooks (name,price,callback) {
-    let newBook = {
-        id:books.length+1 ,
-        name,
-        price
-    }
+function pow (num1,num2) {
     
-    setTimeout(()=>{
-        books.push(newBook);
-        logBooks()
-},4000)
+    testNumber = 1000  //shart 2
+
+    return num1**num2
+
+
+
+    // return Math.random()*num1*num2 shart1
 }
 
-function  logBooks () {
-    console.log(books);  
-}
+console.log(pow(2,3))
 
 
 
-addBooks("golestan",500000,logBooks)
+
