@@ -1,35 +1,27 @@
 
-function firstLogs () {
-    console.log("1") ;
-    console.log("2") ;
-}
+let books = [
+    {id:1 , name:"think again ", price:95000},
+    {id:2 , name:"shahname ", price:400000},
+    {id:3 , name:"ego ", price:78000},
+]
 
-function middleLog (callBack) {
-
+function addBooks (name,price,callback) {
+    let newBook = {
+        id:books.length+1 ,
+        name,
+        price
+    }
+    
     setTimeout(()=>{
-        console.log("3");
-        callBack()
-    })
+        books.push(newBook);
+        logBooks()
+},4000)
 }
 
-function lastLogs () {
-    console.log("4") ;
-    console.log("5") ;
+function  logBooks () {
+    console.log(books);  
 }
 
-firstLogs()
-middleLog(lastLogs)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+addBooks("golestan",500000,logBooks)
