@@ -1,34 +1,16 @@
 "use strict"
 
-let userAge = 19 ;
+import { isLogin , userRegister ,userCount as usersLength} from "./funcs.js"
 
-if(userAge>18){
-    console.log("you logged in succesfully")
-}
+console.log(isLogin(19))
+;
+let newUserName = prompt("Enter User Name") ;
+let newUserAge = prompt("Enter User Age") ;
 
-userAge > 18 && console.log("you logged in succesfully")
-
-userAge < 18 && console.log("you are not registered") 
-
-
-// true || true => true 
-// true || false => true
-// false || true => true
-// false || false => false
+console.log(userRegister(newUserName,newUserAge))
 
 
-// true $$ true => true 
-// true $$ false => false
-// false $$ true => false
-// false $$ false => false
-
-
-
-
-
-
-
-
+console.log(usersLength)
 
 
 
