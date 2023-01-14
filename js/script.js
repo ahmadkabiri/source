@@ -1,24 +1,35 @@
 "use strict"
 
 
-const sum = (...args) => {
-    // console.log("a",a) ;
-    // console.log("b",b) ;
-    // console.log("c",c) ;
-    console.log("args",args) ;
+let user = [1,"Ali",12]
 
-    let sumAllArgs = 0 ;
+// let userID = user[0] 
+// let userName = user[1] 
+// let userAge = user[2] 
 
-    args.forEach(item => sumAllArgs += item)
+let [userID,userName,userAge] = user ;
 
-    return sumAllArgs
-}
+// console.log('userID' , userID) 
+// console.log('userID' , userName) 
+// console.log('userID' , userAge) 
 
-                       
+const showNumbers =  () => [1,3,4,2,7,8] 
+
+let [firstNum , , , secondNum , thirdNum ] = showNumbers()
+
+console.log(firstNum) ;
+console.log(secondNum) ;
+console.log(thirdNum) ;
 
 
- const sumNumbers = sum(1,2,3,4,5)
 
- console.log(sumNumbers)
+
+
+
+
+
+
+
+
 
 
