@@ -1,12 +1,17 @@
 "use strict"
 
 
-function sum() {
-    let toArray = Array.from(arguments)
-    let total = toArray.reduce((acc,curr)=>{
-        return acc+curr
-    },0)
-    return total
+const sum = (...args) => {
+    // console.log("a",a) ;
+    // console.log("b",b) ;
+    // console.log("c",c) ;
+    console.log("args",args) ;
+
+    let sumAllArgs = 0 ;
+
+    args.forEach(item => sumAllArgs += item)
+
+    return sumAllArgs
 }
 
                        
