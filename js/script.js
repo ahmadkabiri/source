@@ -1,22 +1,41 @@
 "use strict"
 
-// let userName = 'amin' ;
+let userAge = 19 ;
 
-// console.log(userName.padStart(10,'*'))
-// console.log(userName.padEnd(10,"?"))
+if(userAge>18){
+    console.log("you logged in succesfully")
+}
+
+userAge > 18 && console.log("you logged in succesfully")
+
+userAge < 18 && console.log("you are not registered") 
+
+
+// true || true => true 
+// true || false => true
+// false || true => true
+// false || false => false
+
+
+// true $$ true => true 
+// true $$ false => false
+// false $$ true => false
+// false $$ false => false
 
 
 
-// let size = '235' ;
-
-// console.log(size.padStart(2,"0"))
 
 
-let phoneNumber = '09028801466' ;
 
-let last4Digits = phoneNumber.slice(-4) ;
 
-let final4Number = last4Digits.padStart(phoneNumber.length,"*")
 
-console.log(final4Number)
+
+
+
+
+
+
+
+
+
 
