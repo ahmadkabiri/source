@@ -1,11 +1,40 @@
 
-let emailRegEx = /.+@.+.com/ 
 
-let userEmial = prompt("please Enter Your Email")
 
-console.log(emailRegEx.test(userEmial))
+// let user = {
+//     id : 1 ,
+//     name : "Ahmad" ,
+//     family : "Kabiri",
+//     walk (el) {
+//         this.name = el ;
+//     }
+// }
 
-// amin@gmail.com babk@gmail.com anir_amiri@gmail.com 
+
+
+// user.walk("reza")
+
+
+// console.log(user)
+
+
+function removeListItem (el) {
+    el.remove()
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
