@@ -1,42 +1,41 @@
 
-// function Animal () {
-//     this.name = 'dog'
-//     this.color = 'brown'
-//     this.canFly = false 
-//     this.footCount = 4
 
-// }
+function User (userName,userAge,userJob){
+    this.name = userName 
+    this.age = userAge
+    this.job = userJob
 
-// let dogAnimal = new Animal()
+    this.getName = function () {
+        return this.name
+    }
 
+    this.getAge = function () {
+        return this.age
+    }
 
-// console.log(dogAnimal)
+    this.getJob = function () {
+        return this.job
+    }
 
+    this.setName = function (newName) {
+        this.name = newName
+    }
 
-function Person (id,name,age,job,type) {
-    this.id = id 
-    this.name = name
-    this.age = age
-    this.job = job
-    this.type = type
+    this.setAge = function (newAge) {
+        this.age = newAge
+    }
+
+    this.setJob = function (newJob) {
+        this.job = newJob
+    }
 
 }
 
-
-let userAli = new Person(1,'ali',19,"Digital Marketing",'user')
-
-let userAmin = new Person(2,'amin',25,'Js developer','Admin')
-
-console.log(userAli)
-
-console.log(userAmin)
+let userAli = new User("Ali",19,"Android Developer")
 
 
+userAli.setAge(10)
 
-
-
-
-
-
+console.log(userAli.getAge())
 
 
