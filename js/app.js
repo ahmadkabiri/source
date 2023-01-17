@@ -1,25 +1,22 @@
 // Built - in Cons Funcs
 
 
-let user = {
+let person = {
     id : 1 ,
     username : "amin" ,
     age : 22 ,
-
-    address : {
-        country:"Iran" 
-    }
+    job:'web developer'
 }
 
+let entriesPerson = Object.entries(person)
 
+// for (let userProp of person){
+//     // Codes...
+// }
 
-// let userStreet = user.address.city ? user.address.city.address : undefined;
-
-let userStreet = user.address.city?.street
-
-console.log(userStreet)
-
-
+for ( let userProp of entriesPerson) {
+    console.log(userProp)
+}
 
 
 
