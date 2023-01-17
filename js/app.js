@@ -1,41 +1,25 @@
+// Built - in Cons Funcs
 
 
-function User (userName,userAge,userJob){
-    this.name = userName 
-    this.age = userAge
-    this.job = userJob
+let user = {
+    id : 1 ,
+    username : "amin" ,
+    age : 22 ,
 
-    this.getName = function () {
-        return this.name
+    address : {
+        country:"Iran" 
     }
-
-    this.getAge = function () {
-        return this.age
-    }
-
-    this.getJob = function () {
-        return this.job
-    }
-
-    this.setName = function (newName) {
-        this.name = newName
-    }
-
-    this.setAge = function (newAge) {
-        this.age = newAge
-    }
-
-    this.setJob = function (newJob) {
-        this.job = newJob
-    }
-
 }
 
-let userAli = new User("Ali",19,"Android Developer")
 
 
-userAli.setAge(10)
+// let userStreet = user.address.city ? user.address.city.address : undefined;
 
-console.log(userAli.getAge())
+let userStreet = user.address.city?.street
+
+console.log(userStreet)
+
+
+
 
 
