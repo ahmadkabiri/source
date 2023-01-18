@@ -1,59 +1,42 @@
 
+// let mySet = new Set()
 
-// // for (let userProb of user) {
-    // //     // Codes ...
-    // // }
-    
-    // // console.log(user)
-    
-    
-    // let  mapUser = new Map() 
-    
-    // mapUser.set("id",1)
-    // mapUser.set("firstName","Qadir")
-    // mapUser.set("lastName","Yolme")
-    // mapUser.set("age",20)
-    
-    // mapUser.delete("age")
-    
-    // console.log(mapUser.get("id"))
-    
-    // console.log(mapUser)
-    // console.log(mapUser.size)
-    // console.log(mapUser.has('firstName'))
-    
-    
-    // mapUser.forEach((value ,key)=>{
-        //     console.log(key+ "=>" + value )
-        // })
-        
-        
-        
-        
-        
-        let user = {
-            id : 1 ,
-            firstName : "Qadir" ,
-            lastName : "Yolme" ,
-            age : 20 
-        }
+// mySet.add("Ali")
 
 
-let userMap = new Map (Object.entries(user))
 
-
-let userObj = Object.fromEntries(userMap)
+// console.log(mySet,mySet.size)
 
 
 
 
+// let myWeakSet = new WeakSet()
+
+// let fakeObj = {
+//     data:"Fake Data"
+// }
+
+// myWeakSet.add(fakeObj)
 
 
-console.log(user)
+// console.log(myWeakSet)
 
-console.log(userMap)
+function FakeData () {
+    this.data = {
+        data: "Fake Data"
+    }
+}
 
+window.fakeData = new FakeData()
 
+console.log(window)
 
+let mySet = new WeakSet()
 
+mySet.add(window.fakeData)
 
+delete window.fakeData
+
+console.log(window.fakeData)
+
+console.log(mySet)
