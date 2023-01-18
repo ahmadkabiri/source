@@ -1,42 +1,51 @@
 
-// let mySet = new Set()
-
-// mySet.add("Ali")
 
 
-
-// console.log(mySet,mySet.size)
+// // // CRUD - PROXY (Get Trap) || (in)
 
 
 
 
-// let myWeakSet = new WeakSet()
-
-// let fakeObj = {
-//     data:"Fake Data"
-// }
-
-// myWeakSet.add(fakeObj)
-
-
-// console.log(myWeakSet)
-
-function FakeData () {
-    this.data = {
-        data: "Fake Data"
-    }
+let user = {
+    id:1 ,
+    firstName : "ali" ,
+    lastName : "Kabiri" ,
+    age: 55 ,
+    phone : 09028801466 ,
+    email : "Ahmadkabiriw@gmail.com"
 }
 
-window.fakeData = new FakeData()
 
-console.log(window)
+let userProxy = new Proxy(user,{
+    get (target,property) {
+        if(property === "age" && target[property] >= "100"){
+            console.log(property)
+            return 100
+        }
 
-let mySet = new WeakSet()
+        return property in target ? target[property] : null
+    }
+})
 
-mySet.add(window.fakeData)
 
-delete window.fakeData
+console.log(userProxy.age)
 
-console.log(window.fakeData)
 
-console.log(mySet)
+
+//  user = new Proxy(user,{
+//     get : function (target,property) {
+//         console.log("Target:" , target)
+//         console.log("Property:" , property)
+
+//         // return target[property] ? target[property] : null
+//         return property in target ? target[property] :"ali"
+//     }
+// })
+
+
+// console.log("User", user.phone)
+
+// // console.log("Proxy User", proxyUser.email)
+
+
+
