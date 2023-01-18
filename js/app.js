@@ -12,7 +12,9 @@ let user = {
     lastName : "Kabiri" ,
     age: 55 ,
     phone : 09028801466 ,
-    email : "Ahmadkabiriw@gmail.com"
+    email : "Ahmadkabiriw@gmail.com" ,
+    type : "user" ,
+
 }
 
 
@@ -24,28 +26,30 @@ let userProxy = new Proxy(user,{
         }
 
         return property in target ? target[property] : null
+    },
+
+    set (target,property,value) {
+        // console.log(target)
+        // console.log(property)
+        // console.log(value)
+
+        if(value <18 && property === "age"){
+            value = 18
+        }
+        if (property === "type" && ['user', 'admin' , 'author' , 'teacher'].includes(value.toLowerCase())) {
+            target[property] = value ;
+        } else {
+            throw new Error("this value is not valid :(") // حواسمون باشه به این موارد
+        }
+
+        target[property] = value
     }
 })
 
 
+
+
+userProxy.type = "admin"
+
 console.log(userProxy.age)
-
-
-
-//  user = new Proxy(user,{
-//     get : function (target,property) {
-//         console.log("Target:" , target)
-//         console.log("Property:" , property)
-
-//         // return target[property] ? target[property] : null
-//         return property in target ? target[property] :"ali"
-//     }
-// })
-
-
-// console.log("User", user.phone)
-
-// // console.log("Proxy User", proxyUser.email)
-
-
 
