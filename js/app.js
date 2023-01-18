@@ -1,55 +1,40 @@
 
 
 
-// // // CRUD - PROXY (Get Trap) || (in)
+let symbol1 = Symbol(" Synmble 1")
+let symbol2 = Symbol("lkdjflskfjsldkjf")
+let symbol3 = Symbol("userID")
+let symbol4 = Symbol("userID")
+
+console.log(symbol1)
+console.log(symbol2)
+console.log(symbol3)
+console.log(symbol4)
 
 
+console.log(symbol3===symbol4)
 
 
-let user = {
-    id:1 ,
-    firstName : "ali" ,
-    lastName : "Kabiri" ,
-    age: 55 ,
-    phone : 09028801466 ,
-    email : "Ahmadkabiriw@gmail.com" ,
-    type : "user" ,
+console.log(typeof symbol1)
 
+let userIDSymbol = Symbol("User ID")
+
+let userObject = {
+    id : 1 ,
+    userName : "amin" ,
+    age : 22 ,
+    [userIDSymbol] : "-0ri20r23k;qkd"
 }
 
 
-let userProxy = new Proxy(user,{
-    get (target,property) {
-        if(property === "age" && target[property] >= "100"){
-            console.log(property)
-            return 100
-        }
-
-        return property in target ? target[property] : null
-    },
-
-    set (target,property,value) {
-        // console.log(target)
-        // console.log(property)
-        // console.log(value)
-
-        if(value <18 && property === "age"){
-            value = 18
-        }
-        if (property === "type" && ['user', 'admin' , 'author' , 'teacher'].includes(value.toLowerCase())) {
-            target[property] = value ;
-        } else {
-            throw new Error("this value is not valid :(") // حواسمون باشه به این موارد
-        }
-
-        target[property] = value
-    }
-})
+console.log(userObject[Symbol("User ID")])
 
 
 
 
-userProxy.type = "admin"
 
-console.log(userProxy.age)
 
+
+for (let item in userObject) {
+    console.log(item)
+}
