@@ -1,40 +1,58 @@
 
+// let num1 = 2 ;
+
+// let num2 = 3 ;
+
+// console.log(num1 + num2) ;
 
 
-let symbol1 = Symbol(" Synmble 1")
-let symbol2 = Symbol("lkdjflskfjsldkjf")
-let symbol3 = Symbol("userID")
-let symbol4 = Symbol("userID")
-
-console.log(symbol1)
-console.log(symbol2)
-console.log(symbol3)
-console.log(symbol4)
+// let numbers = [1,2,3,4,5,6] ;
 
 
-console.log(symbol3===symbol4)
+// ['ali','amin','amir','babak'].map(name=>{
+//     console.log(name)
+// })
 
-
-console.log(typeof symbol1)
-
-let userIDSymbol = Symbol("User ID")
-
-let userObject = {
-    id : 1 ,
-    userName : "amin" ,
-    age : 22 ,
-    [userIDSymbol] : "-0ri20r23k;qkd"
-}
-
-
-console.log(userObject[Symbol("User ID")])
+  
 
 
 
 
 
+const nums = [1 ,2 ,3 ,4 ,5]
 
 
-for (let item in userObject) {
-    console.log(item)
-}
+
+// nums.forEach(num=>{
+//     console.log(num)
+// });
+
+// (function () {
+// console.log("IIFE :") ;
+// })()
+
+
+// const userGenerator = function (username,age,job) {
+//     return 
+//     username
+
+// }
+
+
+// let userAli = userGenerator("ali",19,'choopan')
+
+
+// console.log(userAli)
+
+
+let a = 5 
+
+let b = a + 3 ;
+
+(('amin' + a).toLowerCase())
+
+
+
+
+
+
