@@ -1,56 +1,36 @@
 
-// let num1 = 2 ;
 
-// let num2 = 3 ;
+// MUTABILITY = قابلیت تغییر دارد  primitive data types
 
-// console.log(num1 + num2) ;
-
-
-// let numbers = [1,2,3,4,5,6] ;
-
-
-// ['ali','amin','amir','babak'].map(name=>{
-//     console.log(name)
-// })
-
-  
+// IMMUTABILITY  = قابلیت تغییر ندارد =>تا حد امکان از این استفاده کنیم و دیتاهای ما تغییر داده نشن و دست نخورده بمونن
 
 
 
+let numberOne = 20 ;
 
 
-const nums = [1 ,2 ,3 ,4 ,5]
+let loginFlag = false ;
+
+let user1 = {
+    id:1 ,
+    userName : 'amin' ,
+    age : 22 
+}
+
+let user2 = user1 ;
+
+user2.username = 'qadir'
+
+console.log(user1) ;
+console.log(user2) ;
+
+let names = ['ali','amin','amir','sasan']
 
 
-
-// nums.forEach(num=>{
-//     console.log(num)
-// });
-
-// (function () {
-// console.log("IIFE :") ;
-// })()
+let filteresNames = names.filter(name=>name.length>3)
 
 
-// const userGenerator = function (username,age,job) {
-//     return 
-//     username
-
-// }
-
-
-// let userAli = userGenerator("ali",19,'choopan')
-
-
-// console.log(userAli)
-
-
-let a = 5 
-
-let b = a + 3 ;
-
-(('amin' + a).toLowerCase())
-
+console.log(names)
 
 
 
