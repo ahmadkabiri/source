@@ -1,37 +1,52 @@
+import * as datas from "./script.js"
+
+const inputElem = document.querySelector(".input")
+
+let bookContainerElem = document.querySelector(".book-container")
+
+let promisedList ='' ;
+let list = '' ;
+inputElem.addEventListener("keyup",(event)=>{
+    list = '' ;
+    bookContainerElem.innerHTML = '' ;
+    let existBooks = []
+
+    if(inputElem.value){
+        let searchedWords = event.target.value
+         existBooks = datas.books.filter(book=>{
+            return book.name.includes(searchedWords)
+        })
+    }
 
 
-// MUTABILITY = قابلیت تغییر دارد  primitive data types
+    new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            existBooks.forEach(item=>{
+                list += `<div class="book">
+                <p>${item.name}</p>
+              </div>`
+            })
+            if(list){
+                resolve()
+            }else{
+                reject()
+            }
+        },3000)
 
-// IMMUTABILITY  = قابلیت تغییر ندارد =>تا حد امکان از این استفاده کنیم و دیتاهای ما تغییر داده نشن و دست نخورده بمونن
+    }).then(()=>{
+        bookContainerElem.insertAdjacentHTML("beforeend",list)
+    })
+    .catch(()=>{
+        console.log("chizi nist")
+    })
 
-
-
-let numberOne = 20 ;
-
-
-let loginFlag = false ;
-
-let user1 = {
-    id:1 ,
-    userName : 'amin' ,
-    age : 22 
-}
-
-let user2 = user1 ;
-
-user2.username = 'qadir'
-
-console.log(user1) ;
-console.log(user2) ;
-
-let names = ['ali','amin','amir','sasan']
+    bookContainerElem.insertAdjacentHTML("beforeend",list)
 
 
-let filteresNames = names.filter(name=>name.length>3)
+})
 
 
-console.log(names)
-
+// console.log(datas.books)
 
 
 
