@@ -1,30 +1,28 @@
 
-const loadExtenalFile = cdn => {
-    return new Promise((resolve, reject) => {
-        const linkTag =  document.createElement("link") ;
 
-        linkTag.rel = "stylesheet"
-        linkTag.href = cdn 
+ 
+let users = [
+    {
+        id: 1,
+        username:"amin",
+        password:1010
+    },
+    {
+        id: 2,
+        username:"amir",
+        password : 2323
+    },
+    {
+        id: 3,
+        username:"ali",
+        password:1122,
+        get() {
+            console.log("lk")
+        }
+    },
+]
 
-        linkTag.onload = () =>resolve("File Loaded SuccessFully")
-        linkTag.onerror = () =>reject(new Error("File Not Loaded"))
-
-        document.head.append(linkTag)
-
-    })
-}
-
-
-loadExtenalFile('css/style.css')
-.then((response)=>{
-    console.log(response)
-    document.body.insertAdjacentHTML('afterbegin',`<h1>${response}</h1>`)
-})
-.catch(err => {
-    console.log(err);
-})
-
-
+console.log(JSON.stringify(users))
 
 
 
