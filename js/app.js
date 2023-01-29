@@ -26,7 +26,7 @@
     .then(res=>console.log(res))
 
  })
-
+//
 // firstname lastname password
 // get - post
 // localhost
