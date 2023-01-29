@@ -1,36 +1,32 @@
+ const $ = document ;
 
-
- 
-let users = [
-    {
-        id: 1,
-        username:"amin",
-        password:1010
-    },
-    {
-        id: 2,
-        username:"amir",
-        password : 2323
-    },
-    {
-        id: 3,
-        username:"ali",
-        password:1122,
-        get() {
-            console.log("lk")
-        }
-    },
-]
-
-console.log(JSON.stringify(users))
+ const firstName = $.querySelector(".firstname")
+ const lastName = $.querySelector(".lastname")
+ const passWord = $.querySelector(".password")
+ const button = $.querySelector("button")
 
 
 
+ button.addEventListener("click",(event)=>{
 
+    event.preventDefault()
 
+    let userData = {
+        firstName : firstName.value ,
+        lastname : lastName.value,
+        password : passWord.value
+    }
+    fetch("http//:localhost:3000/api/users", {
+        method : "POST" ,
+        headers : {
+            "Content-type" : "application/json"
+        } ,
+        body : JSON.stringify(userData)
+    })
+    .then(res=>console.log(res))
 
+ })
 
-
-
-
-
+// firstname lastname password
+// get - post
+// localhost
