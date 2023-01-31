@@ -1,70 +1,47 @@
 
 
+const $ = document 
 
-function User (userName,userAge,userJob){
-    this.name = userName 
-    this.age = userAge
-    this.job = userJob
+const firstName = $.querySelector(".firstname") 
+const lastName = $.querySelector(".lastname") 
+const password = $.querySelector(".password") 
 
-    this.getName = function () {
-        return this.name
+const form = $.querySelector("#form") 
+
+
+form.addEventListener("submit",(event)=>{
+    event.preventDefault()
+    let userData = {
+        firstname : firstName.value ,
+        lastname : lastName.value ,
+        password : password.value
     }
 
-    this.getAge = function () {
-        return this.age
-    }
+    // POST REQUEST 
+    fetch('https://backend-project-7e570-default-rtdb.firebaseio.com/false.json',{
+        method : 'POST' ,
+        headers : {
+            'Content-type' : 'application/json'
+        },
+        body : JSON.stringify(userData)
+    })
+    .then(res=>{
+        console.log(res)
+        console.log(res.type)
 
-    this.getJob = function () {
-        return this.job
-    }
+        clearData()
+    })
+    .catch(err=>console.log(err))
 
-    this.setName = function (newName) {
-        this.name = newName
-    }
 
-    this.setAge = function (newAge) {
-        this.age = newAge
-    }
+})
 
-    this.setJob = function (newJob) {
-        this.job = newJob
-    }
+function clearData () {
+    firstName.value = '' 
+    lastName.value = '' 
+    password.value = '' 
 
 }
-
-let userAli = new User("Ali",19,"Android Developer")
-
-
-
-userAli.setAge(10)
-
-console.log(userAli.getJob())
-
-
-
-// Es6 - Class (setter - getter = extends ---)
-
-
-class Person {
-
-constructor (personname , personAge,personJob,personAddress) {
-    // console.log(personname,personAge,personAddress,personJob)
-    this.username = personname 
-    this.personAge = personAge 
-    this.personJob = personJob 
-    this.personAddress = personAddress
-
-}
-
-
-}
-
-
-let personAli = new Person("Ali",19,"front end","tehran") // Call 
-
-console.log(personAli) // object barmigardoone
-console.log(personAli.personJob) // object barmigardoone
-
 
 
 
