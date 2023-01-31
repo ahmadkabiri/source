@@ -1,32 +1,73 @@
- const $ = document ;
-
- const firstName = $.querySelector(".firstname")
- const lastName = $.querySelector(".lastname")
- const passWord = $.querySelector(".password")
- const button = $.querySelector("button")
 
 
 
- button.addEventListener("click",(event)=>{
+function User (userName,userAge,userJob){
+    this.name = userName 
+    this.age = userAge
+    this.job = userJob
 
-    event.preventDefault()
-
-    let userData = {
-        firstName : firstName.value ,
-        lastname : lastName.value,
-        password : passWord.value
+    this.getName = function () {
+        return this.name
     }
-    fetch("http//:localhost:3000/api/users", {
-        method : "POST" ,
-        headers : {
-            "Content-type" : "application/json"
-        } ,
-        body : JSON.stringify(userData)
-    })
-    .then(res=>console.log(res))
 
- })
-//
-// firstname lastname password
-// get - post
-// localhost
+    this.getAge = function () {
+        return this.age
+    }
+
+    this.getJob = function () {
+        return this.job
+    }
+
+    this.setName = function (newName) {
+        this.name = newName
+    }
+
+    this.setAge = function (newAge) {
+        this.age = newAge
+    }
+
+    this.setJob = function (newJob) {
+        this.job = newJob
+    }
+
+}
+
+let userAli = new User("Ali",19,"Android Developer")
+
+
+
+userAli.setAge(10)
+
+console.log(userAli.getJob())
+
+
+
+// Es6 - Class (setter - getter = extends ---)
+
+
+class Person {
+
+constructor (personname , personAge,personJob,personAddress) {
+    // console.log(personname,personAge,personAddress,personJob)
+    this.username = personname 
+    this.personAge = personAge 
+    this.personJob = personJob 
+    this.personAddress = personAddress
+
+}
+
+
+}
+
+
+let personAli = new Person("Ali",19,"front end","tehran") // Call 
+
+console.log(personAli) // object barmigardoone
+console.log(personAli.personJob) // object barmigardoone
+
+
+
+
+
+
+ 
