@@ -1,6 +1,33 @@
 ﻿
 const button = document.querySelector(".wrapper")
 
+
+button.addEventListener("click",()=>{
+    console.log("ok")
+    if (navigator.getBattery){
+        window.navigator.getBattery()
+    }
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // button.addEventListener("click",(event) => {
 
 //     let copyText = "متن کپی شده است"
@@ -30,6 +57,7 @@ const button = document.querySelector(".wrapper")
 //     }
 // })
 
+ 
 
 
 
