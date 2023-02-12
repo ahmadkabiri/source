@@ -1,14 +1,11 @@
 ﻿
-const button = document.querySelector(".wrapper")
+let prices = [1,5,8,8,7,9,5,2]
 
+let total = prices.reduce((obj,currentItem) => {
+    console.log({...obj})
 
-button.addEventListener("click",()=>{
-    console.log("ok")
-    if (navigator.getBattery){
-        window.navigator.getBattery()
-    }
-})
-
+    return {...obj, [currentItem] : (obj[currentItem] || 0) + 1}
+},{})
 
 
 
@@ -16,52 +13,16 @@ button.addEventListener("click",()=>{
 
 
 
+// console.log(total)
 
 
+let users = ["ali","mmd","amin","qadir","sasan","sasan","ali","qadir"] ;
 
-
-
-
-
-
-
-
-
-
-// button.addEventListener("click",(event) => {
-
-//     let copyText = "متن کپی شده است"
-
-
-    // if (window.navigator.clipboard) {
-    //     alert("لطفا از مرورگر کروم استفاده نمایید")
-
-    // window.navigator.clipboard.writeText(copyText)
-
-    // }else{
-    //     alert("لطفا از مرورگر کروم استفاده نمایید")
-    // }
-
-// })
-
-// button.addEventListener("click", () => {
-
-
-//     if (window.navigator.clipboard) {
-
-//     window.navigator.clipboard.readText()
-//     .then(res=>console.log(res))
-
-//     }else{
-//         alert("لطفا از مرورگر کروم استفاده نمایید")
-//     }
-// })
-
- 
-
-
-
-
+users.reduce((prevValue,currentValue)=>{
+    console.log(prevValue,currentValue) ;
+    
+    return currentValue
+},"Sabzlearn")
 
 
 
