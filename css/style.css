@@ -1,19 +1,5 @@
-#todoList label{
-  width: 80%;
-}
-#todoList li{
-  list-style-type: none;
-}
-/* .completed{
 
-} */
-
-#todoList .btn{
-  margin-left: 10px;
-}
-
-.todo-completed {
-  text-decoration: line-through;
-  color: #afa7a7;
-  text-decoration-color: red !important;
+h2{
+  color: red;
+  background-color: yellow;
 }
