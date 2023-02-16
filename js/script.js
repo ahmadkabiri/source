@@ -1,52 +1,56 @@
-﻿const $ = document ;
+﻿
+const userLogin = (username,password,callback)=>{
+    setTimeout(() => {
+        callback({
+            username,
+            password,
+            email : "amin@gmail.com"
+            })
+    },4000);
+}
 
-const usernameInput = $.querySelector("#username")
+const userCourses = (username,callback) => {
+    setTimeout(() => {
+        callback([
+            {id:21 , title:"js export" , price:"free"} ,
+            {id:34 , title:"redux" , price:"free"} ,
 
-const passwordInput = $.querySelector("#password") 
+        ])
+    },3000)
+}
 
-const rememberMeCheckbox = $.querySelector(".ck")
-
-const loginBtn = $.querySelector("button")
-
-
-
-
-
-
-
-
-function setCookie (cookieName,cookieValue,exDay) {
-    const now = new Date() ;
-
-    let expireDay = now.setTime(now.getTime() + exDay*24*60*60*1000)
-
-    document.cookie = `${cookieName}=${cookieValue};path=/;expires=${now}`
-
+const mainVideoInfo = (courseTitle,callback)=>{
+    setTimeout(()=>{
+        callback({
+            id:34 ,
+            title:"redux expert" ,
+            price : "free" ,
+            teacher : "saeedi" ,
+            student:2091 
+        })
+    },3000)
 }
 
 
 
-function clearInput () {
-    usernameInput.value = '' ;
-    passwordInput.value = '' ;
-}
+console.log("سایت برای کاربر لود شد")
 
 
 
+const loginInfos = userLogin("amin_saeedi","0101",(userObject)=>{
 
-loginBtn.addEventListener("click",(event)=>{
-    event.preventDefault()
-    
-    if (rememberMeCheckbox.checked) {
-        setCookie("login-token",usernameInput.value,10)
-    }
-
-    clearInput()
-})
-
-
+    console.log("کاربر لاگین شد" , userObject )
+    userCourses(userObject.username , (userAllCourses)=>{
+        console.log("user COURSES: " , userAllCourses)
+        mainVideoInfo(userAllCourses[1].title,(mainInfos)=>{
+            console.log("Main course Infos :",mainInfos)
+        })
+    })
+}) 
 
 
+
+console.log("کاربر با موفقیت لاگین شد")
 
 
 
