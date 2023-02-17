@@ -57,10 +57,24 @@ console.log("سایت برای کاربر لود شد")
 // }) 
 
 
-userLogin()
-    .then(userObject=>userCourses(userObject.username))
-    .then(userAllCourses => mainVideoInfo(userAllCourses[1].title))
-    .then(mainInfos => console.log(mainInfos))
+// userLogin()
+//     .then(userObject=>userCourses(userObject.username))
+//     .then(userAllCourses => mainVideoInfo(userAllCourses[1].title))
+//     .then(mainInfos => console.log(mainInfos))
+
+
+
+async function runUserCodes () {
+
+    let userInfos = await userLogin("amin_saeedi",0101)
+    let userAllcourses = await userCourses(userInfos.username)
+    let mainInfos = await mainVideoInfo(userAllcourses[1].title)
+    console.log(mainInfos)
+
+}
+
+
+runUserCodes()
 
 
 
@@ -70,12 +84,6 @@ userLogin()
 
 
 
-
-
-
-
-
-console.log("کاربر با موفقیت لاگین شد")
 
 
 
