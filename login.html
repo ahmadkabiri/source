@@ -1,25 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/login.css">
-    <title>Login</title>
-</head>
-<body>
-    <div class="login-page">
-        <div class="form">
-          <form class="login-form">
-            <input type="text" id="username" class="input" placeholder="username"/>
-            <input type="password" id="password" class="input" placeholder="password"/>
-            <button>login</button>
-            Remember Me<input type="checkbox" class="ck" />
-            <p class="message">Not registered? <a href="#">Create an account</a></p>
-          </form>
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="./css/bootstrap.rtl.min.css">
+    
+    <link rel="stylesheet" href="./css/login.css">
+  </head>
+  <body>
+    
+    <div class="container text-center">
+      <div class="row bg-light" style="height: 300px;">
+        <div class="col bg-info p-4 border align-self-start" >
+          One of three columns
+        </div>
+        <div class="col bg-info p-4 border align-self-center" >
+          One of three columns
+        </div>
+        <div class="col bg-info p-4 border align-self-end" >
+          One of three columns
         </div>
       </div>
+    </div>
 
-      <script src="js/script.js"></script>
-</body>
+    <div class="container text-center">
+      <div class="row justify-content-start  bg-light" style="height: 300px;">
+        <div class="col-4 bg-info p-4 border">One Of two columns</div>
+        <div class="col-4 bg-info p-4 border">One Of two columns</div>
+
+      </div>
+    </div>
+
+    <div class="container text-center">
+      <div class="row justify-content-end  bg-light" style="height: 300px;">
+        <div class="col-4 bg-info p-4 border">One Of two columns</div>
+        <div class="col-4 bg-info p-4 border">One Of two columns</div>
+      </div>
+
+      <div class="container text-center">
+        <div class="row justify-content-between  bg-light" style="height: 300px;">
+          <div class="col-4 bg-info p-4 border">One Of two columns</div>
+          <div class="col-4 bg-info p-4 border">One Of two columns</div>
+        </div>
+    </div>
+    <div class="container text-center">
+      <div class="row justify-content-around  bg-light" style="height: 300px;">
+        <div class="col-4 bg-info p-4 border">One Of two columns</div>
+        <div class="col-4 bg-info p-4 border">One Of two columns</div>
+      </div>
+  </div>
+
+  <div class="container text-center">
+    <div class="row justify-content-evenly  bg-light" style="height: 300px;">
+      <div class="col-4 bg-info p-4 border">One Of two columns</div>
+      <div class="col-4 bg-info p-4 border">One Of two columns</div>
+    </div>
+</div>
+
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
